@@ -1,6 +1,6 @@
 id = "mage"
 name = "mage"
-version = "0.0.1"
+version = "0.0.2"
 schema_version = 1
 authors = ["Alexander Kosachev <kosachev_alex@mail.ru>"]
 description = "Mage support."
@@ -12,4 +12,4 @@ languages = ["Mage"]
 
 [grammars.mage]
 repository = "https://github.com/MageLanguage/tree-sitter-mage"
-commit = "efc006f8740c4b07c942725dda89281813e38fae"
+commit = "fa68ea9ca74d571b55db00f86fdbce0c1dc0ad14"
