@@ -52,16 +52,14 @@
 ] @punctuation.bracket
 
 (call
-  (_)
   (pipe)
   (identifier) @function
 )
 
 (call
-  (_)
   (pipe)
   (member
-    (_)
     (extract)
-    (identifier) @function)
+    (identifier) @function
+  )
 )
