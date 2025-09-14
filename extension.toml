@@ -1,6 +1,6 @@
 id = "mage"
 name = "mage"
-version = "0.0.4"
+version = "0.0.5"
 schema_version = 1
 authors = ["Alexander Kosachev <kosachev_alex@mail.ru>"]
 description = "Mage support."

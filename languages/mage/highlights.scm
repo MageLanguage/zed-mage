@@ -51,6 +51,32 @@
   "\""
 ] @punctuation.bracket
 
+(assign
+  (identifier) @keyword
+  (constant)
+)
+
+(assign
+  (member
+    (extract)
+    (identifier) @keyword
+  )
+  (constant)
+)
+
+(assign
+  (identifier) @property
+  (variable)
+)
+
+(assign
+  (member
+    (extract)
+    (identifier) @property
+  )
+  (variable)
+)
+
 (call
   (pipe)
   (identifier) @function
