@@ -12,4 +12,4 @@ languages = ["Mage"]
 
 [grammars.mage]
 repository = "https://github.com/MageLanguage/tree-sitter-mage"
-rev = "ec741cc207d2c6c0a8853f4fc74b8384ce71fccb"
+rev = "a7beb5341246817b170dac9b5dea16579e0bca55"
