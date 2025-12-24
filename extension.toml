@@ -1,0 +1,15 @@
+id = "mage"
+name = "mage"
+version = "0.1.0"
+schema_version = 1
+authors = ["Aleksandr Kosachev <gohryt@rays-of-good.online>"]
+description = "Mage support"
+repository = "https://github.com/MageLanguage/zed-mage"
+
+[language_servers.mage]
+name = "Mage LS"
+languages = ["Mage"]
+
+[grammars.mage]
+repository = "https://github.com/MageLanguage/tree-sitter-mage"
+rev = "dc26935d50ca222f51cee9fdde70edf68348d885"

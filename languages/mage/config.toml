@@ -1,0 +1,3 @@
+name = "Mage"
+grammar = "mage"
+path_suffixes = ["ms"]
