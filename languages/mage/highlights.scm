@@ -20,26 +20,25 @@
   (binary)
   (octal)
   (decimal)
-  (hex)
+  (hexadecimal)
+  (integer)
 ] @number
 
 [
   (constant)
   (variable)
   (pipe)
-  (and)
-  (or)
-  (equal)
-  (not_equal)
-  (less_than)
-  (greater_than)
-  (less_equal)
-  (greater_equal)
-  (add)
-  (subtract)
-  (multiply)
-  (divide)
-  (modulo)
+  (equal_sign)
+  (not_equal_sign)
+  (less_than_sign)
+  (greater_than_sign)
+  (less_than_or_equal_sign)
+  (greater_than_or_equal_sign)
+  (addition)
+  (subtraction)
+  (multiplication)
+  (division)
+  (modulus)
   (extract)
 ] @operator
 
@@ -49,43 +48,51 @@
   "{"
   "}"
   "\""
+  ","
 ] @punctuation.bracket
 
-(assign
-  (identifier) @keyword
-  (constant)
+(constant_assignment
+  name: (identifier) @keyword
 )
 
-(assign
-  (member
-    (extract)
-    (identifier) @keyword
+(constant_assignment
+  name: (member
+    property: (identifier) @keyword
   )
-  (constant)
 )
 
-(assign
-  (identifier) @property
-  (variable)
+(variable_assignment
+  name: (identifier) @property
 )
 
-(assign
-  (member
-    (extract)
-    (identifier) @property
+(variable_assignment
+  name: (member
+    property: (identifier) @property
   )
-  (variable)
 )
 
 (call
-  (pipe)
+  name: (identifier) @function
+)
+
+(call
+  name: (member
+    property: (identifier) @function
+  )
+)
+
+(call
+  name: (implicit_member
+    (identifier) @function
+  )
+)
+
+(nullary_call
   (identifier) @function
 )
 
-(call
-  (pipe)
+(nullary_call
   (member
-    (extract)
-    (identifier) @function
+    property: (identifier) @function
   )
 )

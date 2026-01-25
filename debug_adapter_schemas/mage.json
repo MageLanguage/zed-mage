@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mage Debug Adapter Configuration",
+  "description": "JSON schema for Mage debug adapter protocol launch and attach configurations",
+  "type": "object",
+  "oneOf": [
+    {
+      "title": "Launch",
+      "properties": {
+        "request": {
+          "type": "string",
+          "enum": ["launch"],
+          "description": "Launch a new Mage program for debugging"
+        },
+        "program": {
+          "type": "string",
+          "description": "Path to the Mage source file to debug"
+        },
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Command line arguments to pass to the program"
+        },
+        "cwd": {
+          "type": "string",
+          "description": "Working directory for the launched process",
+          "default": "$ZED_WORKTREE_ROOT"
+        },
+        "stopOnEntry": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically pause the program after launching"
+        }
+      },
+      "required": ["request", "program"]
+    },
+    {
+      "title": "Attach",
+      "properties": {
+        "request": {
+          "type": "string",
+          "enum": ["attach"],
+          "description": "Attach to a running Mage process"
+        },
+        "processId": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "The process ID of the running Mage application to attach to"
+        },
+        "port": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535,
+          "description": "The debug port to connect to"
+        },
+        "host": {
+          "type": "string",
+          "default": "localhost",
+          "description": "The host address to connect to"
+        }
+      },
+      "required": ["request"]
+    }
+  ]
+}
