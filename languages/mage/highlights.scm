@@ -27,7 +27,6 @@
 [
   (constant)
   (variable)
-  (pipe)
   (equal_sign)
   (not_equal_sign)
   (less_than_sign)
@@ -71,28 +70,12 @@
   )
 )
 
+(multiple_variable_assignment
+  names: (name_list
+    (identifier) @property
+  )
+)
+
 (call
   name: (identifier) @function
-)
-
-(call
-  name: (member
-    property: (identifier) @function
-  )
-)
-
-(call
-  name: (implicit_member
-    (identifier) @function
-  )
-)
-
-(nullary_call
-  (identifier) @function
-)
-
-(nullary_call
-  (member
-    property: (identifier) @function
-  )
 )
